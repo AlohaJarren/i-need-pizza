@@ -12,10 +12,10 @@ var order11821 = {
   state: "WA",
   zipCode: "11310",
   pizza: {  crust: "thin", pizzaSauce: "robust marinara", cheese: "regular",
-      toppings: {
-              veggies: ["olives", "green peppers"],
-              meats: ["pepperoni", "ham", "sausage"]
-            }
+    toppings: {
+      veggies: ["olives", "green peppers"],
+      meats: ["pepperoni", "ham", "sausage"]
+    }
     },
   sideItems: ["breadsticks", "bbq wings 6 piece"],
   sauces: "ranch",
@@ -50,7 +50,9 @@ var order11372 = {
 * currentOrders should be single object containing both orders from above
 */
 
-var currentOrders = {firstOrder: "order11872", secondOrder: "order11372"}
+var currentOrders = { 
+  bothOrders: [order11821, order11372]
+}
 
 /*
 * Make the changes to the currentOrders object based on the ReadMe
@@ -58,9 +60,11 @@ var currentOrders = {firstOrder: "order11872", secondOrder: "order11372"}
 * Console.log(currentOrders) to verify changes have been made
 */
 
-currentOrders.order11821.pizza.pizzaSauce["pizzaSauce"] = "classic marinara";
-currentOrders.order11821.pizza.toppings.veggies = ["onion", "anchovies", "mushrooms", "spinach"];
-currentOrders.order11821.pizza.toppings.meat = ["pepperoni", "ham"];
-currentOrders.order11821.orderTime = "20 minutes";
+currentOrders.bothOrders[0].pizza.pizzaSauce = "classic marinara";
+currentOrders.bothOrders[0].pizza.toppings.veggies.push("spinach");
+currentOrders.bothOrders[0].pizza.toppings.meats = ["pepperoni", "ham"];
+currentOrders.bothOrders[0].orderTime = "20 minutes";
 
-console.log(currentOrders());
+console.log(order11821);
+console.log("\n");
+console.log(order11821.pizza.toppings);
